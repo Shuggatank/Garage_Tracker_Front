@@ -8,12 +8,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { VehicleSearchComponent } from './vehicle-search/vehicle-search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    VehicleSearchComponent
+    VehicleSearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
