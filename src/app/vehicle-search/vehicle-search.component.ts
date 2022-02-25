@@ -11,18 +11,31 @@ export class VehicleSearchComponent implements OnInit {
   results: any;
   weather: any;
   data: any;
+ public vin: string = '3VW2B7AJ6JM212741';
   constructor(private http: HttpClient) { }
 
-  Searcher() {
-    console.log(this.results)
-    console.log(this.weather.name)
-    // this.data.forEach((d: any) => {
-    //   console.log(d);
-  // })
-  }
+  // Searcher(vin: string) {
+  //   console.log("finding by vin: " + vin)
+  //   console.log(this.results)
+  //   console.log(this.weather.name)
+  //   this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`)
+  //   .subscribe(data => {
+  //     console.log(data)
+  //     this.results = data;
+  //   })
+  //   // this.data.forEach((d: any) => {
+  //   //   console.log(d);
+  // // })
+  // }
 
   ngOnInit(): void {
-    this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/5UXWX7C5*BA?format=json`)
+    // this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/5UXWX7C5*BA?format=json`)
+    // .subscribe(data => {
+    //   console.log(data)
+    //   this.results = data;
+    // })
+
+    this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${this.vin}?format=json`)
     .subscribe(data => {
       console.log(data)
       this.results = data;
@@ -45,10 +58,22 @@ export class VehicleSearchComponent implements OnInit {
     // this.weather = 12;
     console.log(this.weather)
 
-  this.Searcher();
+  
 
   }
-
+  Searcher(vin: any) {
+    console.log("finding by vin: " + vin)
+    console.log(this.results)
+    console.log(this.weather.name)
+    this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`)
+    .subscribe(data => {
+      console.log(data)
+      this.results = data;
+    })
+    // this.data.forEach((d: any) => {
+    //   console.log(d);
+  // })
+  }
   
 
 }
