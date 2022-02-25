@@ -10,3 +10,12 @@
     <button type="button" class="btn btn-dark">Dark</button>
     <button type="button" class="btn btn-link">Link</button>
   </div>
+
+  {{vehicle.id}}
+  {{vehicle.make}}
+  {{vehicle.model}}
+  {{vehicle.cin}}
+  {{vehicle.year}}
+<ul *ngFor="let oilChange of vehicle.gasFillList; let i = index">
+  {{oilChange.date}}
+</ul>
