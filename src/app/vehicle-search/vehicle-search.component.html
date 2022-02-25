@@ -5,9 +5,19 @@
 <p>Make: {{results.Results[6].Value}}</p>
 <p>{{results.Results[7].Variable}}: {{results.Results[7].Value}}</p>
 <p>{{results.Results[8].Variable}}: {{results.Results[8].Value}}</p>
-<p>{{results.Results[12].Variable}}: {{results.Results[12].Value}}</p>
+<p>{{results.Results[9].Variable}}: {{results.Results[9].Value}}</p>
 <p>{{results.Results[21].Variable}}: {{results.Results[21].Value}}</p>
-<p>{{results.Results[26].Variable}}: {{results.Results[26].Value}}</p>
+
 
 <p>{{data[0].make}}</p>
+<section>
+    <form class="d-flex">
+        <input [(ngModel)]="vin" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button  (click)="Searcher(vin)" class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</section>
 
+    <input [(ngModel)]="vin"  (keyup.enter)="Searcher(vin)" type="text" placeholder="Zip Code Here"/>
+    <input (click)="Searcher(vin)"  type="submit" value="Search"/>
+
+    {{vin}}
