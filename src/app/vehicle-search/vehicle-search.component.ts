@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, delay } from "rxjs/operators";
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-vehicle-search',
@@ -12,7 +13,8 @@ export class VehicleSearchComponent implements OnInit {
   weather: any;
   data: any;
   test: any;
-  public vin: string = '';
+  vin: string = '';
+
 
  //SAJWJ6BV7G8K32305  //VIN for testing
 
@@ -74,7 +76,7 @@ export class VehicleSearchComponent implements OnInit {
     
   }
   async Searcher(vin: any) {
-   
+   console.log(vin)
     console.log("finding by vin: " + vin)
 
 
