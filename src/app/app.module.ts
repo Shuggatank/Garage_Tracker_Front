@@ -10,13 +10,17 @@ import { VehicleSearchComponent } from './vehicle-search/vehicle-search.componen
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { GarageComponent } from './garage/garage.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     VehicleSearchComponent,
-    HomeComponent
+    HomeComponent,
+    GarageComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,
