@@ -12,7 +12,7 @@
 <p>{{data[0].make}}</p>
 <section>
     <form class="d-flex">
-        <input [(ngModel)]="vin" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input [(ngModel)]="vin" name="VIN" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button  (click)="Searcher(vin)" class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </section>
@@ -20,4 +20,4 @@
     <input [(ngModel)]="vin"  (keyup.enter)="Searcher(vin)" type="text" placeholder="Zip Code Here"/>
     <input (click)="Searcher(vin)"  type="submit" value="Search"/>
 
-    {{vin}}
+  
