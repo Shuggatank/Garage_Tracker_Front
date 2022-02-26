@@ -13,7 +13,7 @@ export class GarageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get(`http://localhost:9092/api/vehicles`)
+    this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles`)
     .subscribe((data:any) => {
       console.log(data);
       this.data = data;
