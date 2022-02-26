@@ -1,16 +1,5 @@
-<p>vehicle-details works!</p>
-<div class="mt-5">
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-    <button type="button" class="btn btn-link">Link</button>
-  </div>
-
+<body>
+<section class="info">
   {{vehicle.id}}
   {{vehicle.make}}
   {{vehicle.model}}
@@ -19,3 +8,58 @@
 <ul *ngFor="let oilChange of vehicle.gasFillList; let i = index">
   {{oilChange.date}}
 </ul>
+</section>
+
+
+<section class="tab-list">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="oil-tab" data-bs-toggle="tab" data-bs-target="#oil" type="button" role="tab" aria-controls="oil" aria-selected="true">Oil</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="gas-tab" data-bs-toggle="tab" data-bs-target="#gas" type="button" role="tab" aria-controls="gas" aria-selected="false">Gas</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="maintenance-tab" data-bs-toggle="tab" data-bs-target="#maintenance" type="button" role="tab" aria-controls="maintenance" aria-selected="false">Maintenance</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent" >
+  <div class="tab-pane fade show active" id="oil" role="tabpanel" aria-labelledby="oil-tab">
+    <div class="list-group" *ngFor="let oilChange of vehicle.oilChangeList; let i = index">
+     <a class="list-group-item list-group-item-action" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Mileage: {{oilChange.mileage}}</h5>
+          <small>{{oilChange.date}}</small>
+        </div>
+        <p class="mb-1">Oil Grade: {{oilChange.oilGrade}}</p>
+        <small>And some small print.</small>
+    </a>
+  </div>
+</div>
+  <div class="tab-pane fade" id="gas" role="tabpanel" aria-labelledby="gas-tab">
+    <div class="list-group" *ngFor="let gasFill of vehicle.gasFillList; let i = index">
+      <a class="list-group-item list-group-item-action" aria-current="true">
+         <div class="d-flex w-100 justify-content-between">
+           <h5 class="mb-1"></h5>
+           <small>{{gasFill.date}}</small>
+         </div>
+         <p class="mb-1">Gallons Filled: {{gasFill.totalAmount}}<br>Cost per gallon: ${{gasFill.cost}}</p>
+         <small>Total Cost: {{gasFill.totalAmount * gasFill.cost}}</small>
+     </a>
+   </div>
+  </div>
+  <div class="tab-pane fade" id="maintenance" role="tabpanel" aria-labelledby="maintenance-tab">
+    <div class="list-group" *ngFor="let maintenance of vehicle.maintenanceRecordList; let i = index">
+      <a class="list-group-item list-group-item-action" aria-current="true">
+         <div class="d-flex w-100 justify-content-between">
+           <h5 class="mb-1"></h5>
+           <small>{{maintenance.date}}</small>
+         </div>
+         <p class="mb-1">{{maintenance.description}}</p>
+         <small>Total Cost: ${{maintenance.cost}}</small>
+     </a>
+   </div>
+  </div>
+</div>
+</section>
+</body>
