@@ -17,7 +17,7 @@
           <h5 class="modal-title" id="staticBackdropLabel">Vehicle Information</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" *ngIf="results != ''">
             <p>{{results.SearchCriteria}}</p>
             <p>{{results.Results[6].Variable}}: {{results.Results[6].Value}}</p>
             <p>{{results.Results[7].Variable}}: {{results.Results[7].Value}}</p>
@@ -32,4 +32,4 @@
       </div>
     </div>
   </div>
-  
+
