@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { GarageComponent } from './garage/garage.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,7 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
     VehicleSearchComponent,
     HomeComponent,
     GarageComponent,
-    VehicleDetailsComponent
+    VehicleDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
     BrowserAnimationsModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
