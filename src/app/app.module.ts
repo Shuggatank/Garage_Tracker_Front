@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { GarageComponent } from './garage/garage.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgProgressModule } from 'ngx-progressbar';
+import { NgProgressHttpModule } from 'ngx-progressbar/http';
+import { NgProgressRouterModule } from 'ngx-progressbar/router';
 
 
 
@@ -32,7 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgProgressModule,
+    NgProgressHttpModule,
+    NgProgressRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
