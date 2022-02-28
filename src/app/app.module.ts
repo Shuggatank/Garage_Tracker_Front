@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgProgressModule } from 'ngx-progressbar';
 import { NgProgressHttpModule } from 'ngx-progressbar/http';
 import { NgProgressRouterModule } from 'ngx-progressbar/router';
+import { OilchangeformComponent } from './vehicle-details/oilchangeform/oilchangeform.component';
+import { GasfillformComponent } from './vehicle-details/gasfillform/gasfillform.component';
+import { MaintenanceformComponent } from './vehicle-details/maintenanceform/maintenanceform.component';
 
 
 
@@ -27,6 +30,9 @@ import { NgProgressRouterModule } from 'ngx-progressbar/router';
     HomeComponent,
     GarageComponent,
     VehicleDetailsComponent,
+    OilchangeformComponent,
+    GasfillformComponent,
+    MaintenanceformComponent,
   ],
   imports: [
     BrowserModule,
