@@ -10,7 +10,10 @@ import { TrackerapiService } from '../trackerapi.service';
 })
 export class VehicleDetailsComponent implements OnInit {
   vehicle: any;
-  test: any = [1,2,3,4,5,6,]
+  results: any;
+  vin: any;
+
+
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -20,9 +23,25 @@ export class VehicleDetailsComponent implements OnInit {
       this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}`).subscribe(response => {
         console.log(response)
         this.vehicle = response;
+        console.log(this.vehicle.vin)
+        
+
+
         // if(response.id === par)
+        this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${this.vehicle.vin}?format=json`)
+        .subscribe(data => {
+          console.log(data);
+          this.results = data;
+        })
+
       })
     })
+
+
+
+
   }
+
+  
 
 }
