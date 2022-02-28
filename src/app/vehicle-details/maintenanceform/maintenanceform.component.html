@@ -1,0 +1,33 @@
+<div class="modal fade" id="maintenanceModal" tabindex="-1" aria-labelledby="createPostModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <form class="post" >
+              <!-- #postForm="ngForm"> -->
+                <!-- {{form.value | json}} -->
+                <h3>Maintenance Record</h3>
+                <hr />
+                <!-- <h1>{{date}}</h1> -->
+              
+                <div class="mb-2">
+                  <!-- <label for="title" class="form-label">Mileage</label> -->
+                 
+                  <input  formControlName="title" type="text" class="form-control" id="title" placeholder="Date">
+                </div>
+                <div class="mb-3">
+                  <!-- <label for="author" class="form-control">Date</label> -->
+                  <input  formControlName="title" type="text" class="form-control" id="title" placeholder="Cost">
+                </div>
+                <div class="mb-3">
+                  <!-- <label  for="date" class="form-control">Oil Grade</label> -->
+                  <textarea  formControlName="title" type="text" class="form-control" id="title" placeholder="Description"></textarea>
+                  <!-- <input ngModel name="date" type="" class="form-control" id="date" placeholder="06/19/1865"> -->
+                </div>
+
+              <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal">Submit</button>
+              <!-- when button is click it submits its new object -->
+              
+              </form>
+            </div>
+          </div>
+        </div>    
