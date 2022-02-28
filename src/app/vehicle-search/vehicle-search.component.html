@@ -1,31 +1,12 @@
-<p>vehicle-search works!</p>
 
+<h2 class="mt-5  text-center">Search Vehicle By VIN</h2>
 
-<section>
+<section class="mx-auto" style="width:50%">
     <form class="d-flex">
-        <input [(ngModel)]="vin" name="VIN" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input [(ngModel)]="vin" name="VIN" class="form-control me-2" type="search" placeholder="Search VIN" aria-label="Search VIN">
         <button  (click)="Searcher(vin)" class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
     </form>
 </section>
-
-    <!-- <input [(ngModel)]="vin"  (keyup.enter)="Searcher(vin)" type="text" placeholder="Zip Code Here"/>
-    <input (click)="Searcher(vin)"  type="submit" value="Search"/>
-<form (ngSubmit)="Searcher(vin)">
-    <input [(ngModel)]="vin" name="VIN" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button  (click)="Searcher(vin)" class="btn btn-outline-success" type="submit">Search</button>
-</form> -->
-<!-- <p>{{results.SearchCriteria}}</p>
-<p>{{results.Results[0].Variable}}</p>
-<p>Make: {{results.Results[6].Value}}</p>
-<p>{{results.Results[7].Variable}}: {{results.Results[7].Value}}</p>
-<p>{{results.Results[8].Variable}}: {{results.Results[8].Value}}</p>
-<p>{{results.Results[9].Variable}}: {{results.Results[9].Value}}</p>
-<p>{{results.Results[21].Variable}}: {{results.Results[21].Value}}</p>
-
-{{vin}}
-<p>{{data[0].make}}</p> -->
-
-
 
   
   <!-- Modal -->
@@ -38,7 +19,7 @@
         </div>
         <div class="modal-body">
             <p>{{results.SearchCriteria}}</p>
-            <p>Make: {{results.Results[6].Value}}</p>
+            <p>{{results.Results[6].Variable}}: {{results.Results[6].Value}}</p>
             <p>{{results.Results[7].Variable}}: {{results.Results[7].Value}}</p>
             <p>{{results.Results[8].Variable}}: {{results.Results[8].Value}}</p>
             <p>{{results.Results[9].Variable}}: {{results.Results[9].Value}}</p>
@@ -46,7 +27,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="AddVehicle()" data-bs-dismiss="modal">Add Vehicle</button>
+          <button type="button" class="btn btn-success" (click)="AddVehicle()" data-bs-dismiss="modal">Add Vehicle</button>
         </div>
       </div>
     </div>
