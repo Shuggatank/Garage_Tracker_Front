@@ -2,29 +2,23 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <form class="post" >
+          <form class="maintenance"  [formGroup]="form">
               <!-- #postForm="ngForm"> -->
                 <!-- {{form.value | json}} -->
                 <h3>Maintenance Record</h3>
                 <hr />
-                <!-- <h1>{{date}}</h1> -->
-              
                 <div class="mb-2">
-                  <!-- <label for="title" class="form-label">Mileage</label> -->
                  
-                  <input  formControlName="title" type="text" class="form-control" id="title" placeholder="Date">
+                  <input  formControlName="date" type="text" class="form-control"  id="date" placeholder="MM/DD/YYYY"  ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
                 </div>
                 <div class="mb-3">
-                  <!-- <label for="author" class="form-control">Date</label> -->
-                  <input  formControlName="title" type="text" class="form-control" id="title" placeholder="Cost">
+                  <input  formControlName="cost" type="number" class="form-control" id="cost" placeholder="Cost">
                 </div>
                 <div class="mb-3">
-                  <!-- <label  for="date" class="form-control">Oil Grade</label> -->
-                  <textarea  formControlName="title" type="text" class="form-control" id="title" placeholder="Description"></textarea>
-                  <!-- <input ngModel name="date" type="" class="form-control" id="date" placeholder="06/19/1865"> -->
+                  <textarea  formControlName="description" type="text" class="form-control" id="description" placeholder="Description"></textarea>
                 </div>
-
-              <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal">Submit</button>
+              <!-- button is disabled until form is valid-->
+              <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal" [disabled]="!form.valid">Submit</button>
               <!-- when button is click it submits its new object -->
               
               </form>
