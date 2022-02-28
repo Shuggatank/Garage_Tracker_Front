@@ -21,7 +21,8 @@ export class VehicleDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params =>{
       let paramId: string = params.get('id') || 'error';
       console.log(paramId);
-      this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}`).subscribe(response => {
+      // this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}`).subscribe(response => {
+      this.http.get(`http://localhost:9092/api/vehicles/${paramId}`).subscribe(response => {
         console.log(response)
         this.vehicle = response;
         console.log(this.vehicle.vin)
@@ -42,7 +43,5 @@ export class VehicleDetailsComponent implements OnInit {
 
 
   }
-
-  
 
 }
