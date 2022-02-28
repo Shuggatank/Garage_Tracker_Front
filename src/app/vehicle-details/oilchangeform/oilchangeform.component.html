@@ -2,39 +2,30 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <form class="oilchange" [formGroup]="form">
+          <form class="oilchange mx-auto" [formGroup]="form">
               <!-- #postForm="ngForm"> -->
-                <!-- {{form.value | json}} -->
+                {{form.value | json}}
                 <h3>Add Oil Change</h3>
                 <hr />
-                <!-- <h1>{{date}}</h1> -->
-              
                 <div class="mb-2" >
-                  <!-- <label for="title" class="form-label">Mileage</label> -->
-                  
-                  <input  formControlName="mileage" type="text" class="form-control" id="mileage" placeholder="Mileage" required>
+                  <input  formControlName="mileage" type="number" class="form-control" id="mileage" placeholder="Mileage"  required>
                 </div>
                 <div class="mb-3">
-                  <!-- <label for="author" class="form-control">Date</label> -->
-                  <!-- <input  formControlName="date" type="date" class="form-control"  id="date" placeholder="MM/DD/YYYY" required> -->
                   <input  formControlName="date" type="text" class="form-control"  id="date" placeholder="MM/DD/YYYY"  ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
-                 
+
                 </div>
                 <div class="mb-3">
-                  <!-- <label  for="date" class="form-control">Oil Grade</label> -->
                   <input  formControlName="oilGrade" type="text" class="form-control" id="oilGrade" placeholder="Oil Grade">
                   <!-- <input ngModel name="date" type="" class="form-control" id="date" placeholder="06/19/1865"> -->
                 </div>
                 <div class="mb-3">
-                  <!-- <label for="body" class="form-control">Oil Filter</label> -->
                   <input  formControlName="oilFilter" type="text" class="form-control" id="oilFilter" placeholder="Oil Filter">
-                  
                 </div>
-              <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal">Submit</button>
-              <!-- when button is click it submits its new object -->
-              
-              </form>
-            </div>
-          </div>
-        </div>    
-     
+                <!-- button is disabled until form is valid-->
+              <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal" [disabled]="!form.valid">Submit</button>
+              <!-- when button is click it submits its new object -->     
+          </form>
+        </div>
+      </div>
+    </div>    
+</div>
