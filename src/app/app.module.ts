@@ -19,6 +19,7 @@ import { NgProgressRouterModule } from 'ngx-progressbar/router';
 import { OilchangeformComponent } from './vehicle-details/oilchangeform/oilchangeform.component';
 import { GasfillformComponent } from './vehicle-details/gasfillform/gasfillform.component';
 import { MaintenanceformComponent } from './vehicle-details/maintenanceform/maintenanceform.component';
+import { SearchToastComponent } from './vehicle-search/search-toast/search-toast.component';
 
 
 
@@ -33,6 +34,7 @@ import { MaintenanceformComponent } from './vehicle-details/maintenanceform/main
     OilchangeformComponent,
     GasfillformComponent,
     MaintenanceformComponent,
+    SearchToastComponent,
   ],
   imports: [
     BrowserModule,
