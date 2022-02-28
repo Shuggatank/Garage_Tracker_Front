@@ -29,37 +29,7 @@ export class VehicleSearchComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //  this.form = this.formBuild.group({
-    //       vin: new FormControl(''),
-    //       make: new FormControl(''),
-    //       model: new FormControl(''),
-    //       year: new FormControl('')
-    //   })
 
-    //Testing backend api
-    // this.http.get(`http://localhost:9092/api/vehicles`)
-    //   .subscribe((data:any) => {
-    //     console.log(data);
-    //     this.data = data;
-    //   })
-
-    //For testing purposes
-    // this.http
-    //   .get(`http://api.openweathermap.org/data/2.5/weather?zip=93534,us&appid=052f26926ae9784c2d677ca7bc5dec98&&units=imperial`)
-    //   .subscribe((response) => {
-    //     console.log(response);
-    //     this.weather = response;
-    //     console.log(this.weather);
-    // });
-    console.log(this.vin)
-
-    // console.log(this.weather)
-    console.log(this.test)
-    // this.Searcher('SAJWJ6BV7G8K32305'); //Works perfectly first time
-    // this.vin = 'SAJWJ6BV7G8K32305'; // Undefined
-    // this.vin = (<HTMLInputElement><unknown>document.getElementsByName("VIN")).value //Undefined on first click
-    // this.Searcher((<HTMLInputElement><unknown>document.getElementsByName("VIN")).value); //Undefined on first pass(automatic), passes value on click
-    
   }
   Searcher(vin: any) {
    console.log(vin)
@@ -92,6 +62,9 @@ export class VehicleSearchComponent implements OnInit {
       console.log(data);
     })
     this.vin = '';
+    this.results = '';
+
+
   }
   
 }
