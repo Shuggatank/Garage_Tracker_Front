@@ -18,6 +18,33 @@ export class VehicleDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
+  //   this.route.paramMap.subscribe(params =>{
+  //     let paramId: string = params.get('id') || 'error';
+  //     console.log(paramId);
+  //     // this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}`).subscribe(response => {
+  //     this.http.get(`http://localhost:9092/api/vehicles/${paramId}`).subscribe(response => {
+  //       console.log(response)
+  //       this.vehicle = response;
+  //       console.log(this.vehicle.vin)
+        
+
+
+  //       // if(response.id === par)
+  //       this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${this.vehicle.vin}?format=json`)
+  //       .subscribe(data => {
+  //         console.log(data);
+  //         this.results = data;
+  //       })
+
+  //     })
+    // })
+
+    this.getData();
+
+
+  }
+
+  getData() {
     this.route.paramMap.subscribe(params =>{
       let paramId: string = params.get('id') || 'error';
       console.log(paramId);
@@ -38,10 +65,6 @@ export class VehicleDetailsComponent implements OnInit {
 
       })
     })
-
-
-
-
   }
 
 }
