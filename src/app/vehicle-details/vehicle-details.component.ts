@@ -6,7 +6,8 @@ import { TrackerapiService } from '../trackerapi.service';
 @Component({
   selector: 'app-vehicle-details',
   templateUrl: './vehicle-details.component.html',
-  styleUrls: ['./vehicle-details.component.scss']
+  styleUrls: ['./vehicle-details.component.scss'],
+  template: `<ng-progress></ng-progress>`
 })
 export class VehicleDetailsComponent implements OnInit {
   vehicle: any;
