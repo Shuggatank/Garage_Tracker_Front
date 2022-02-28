@@ -4,13 +4,13 @@
 <section class="mx-auto" style="width:50%">
     <form class="d-flex">
         <input [(ngModel)]="vin" name="VIN" class="form-control me-2" type="search" placeholder="Search VIN" aria-label="Search VIN">
-        <button  (click)="Searcher(vin)" class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Search</button>
+        <button  (click)="Searcher(vin)" class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#addVehicle">Search</button>
     </form>
 </section>
 
   
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="addVehicle" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
