@@ -58,7 +58,7 @@ export class VehicleSearchComponent implements OnInit {
     const headers = {'content-type': 'application/json'};
     const body = JSON.stringify(this.form.value)
     console.log(body)
-    this.http.post<any>(`http://localhost:9092/api/vehicles`, body, {'headers': headers}).subscribe(data => {
+    this.http.post<any>(`https://garage-tracker.herokuapp.com/api/vehicles`, body, {'headers': headers}).subscribe(data => {
       console.log(data);
     })
     this.vin = '';

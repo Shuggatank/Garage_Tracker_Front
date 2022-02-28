@@ -41,7 +41,7 @@ onSubmit() {
   const body = JSON.stringify(this.form.value)
   this.route.paramMap.subscribe(params =>{
     let paramId: string = params.get('id') || 'error';
-    this.http.post<any>(`http://localhost:9092/api/vehicles/${paramId}/maintenance`, body, {'headers': headers}).subscribe(data => {
+    this.http.post<any>(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}/maintenance`, body, {'headers': headers}).subscribe(data => {
       console.log(data);
       this.details.getData()
     })
