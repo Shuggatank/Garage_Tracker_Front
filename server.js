@@ -1,16 +1,15 @@
-//Install express server
+////Install express server
 const express = require('express');
 const path = require('path');
 
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/Garage_Tracker'));
+app.use(express.static('./dist/Garage_Tracker'));
 
-app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/Garage_Tracker/index.html'));
-});
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/Garage_Tracker/'}),
+);
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
