@@ -4,6 +4,7 @@ import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } fr
 
 /**
  * This Service handles how the date is represented in scripts i.e. ngModel.
+ * https://ng-bootstrap.github.io/#/components/datepicker/examples#adapter
  */
 
 @Injectable({
