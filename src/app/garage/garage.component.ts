@@ -16,14 +16,13 @@ export class GarageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get(`http://localhost:9092/api/vehicles`)
-    .subscribe((data:any) => {
-      console.log(data);
-      this.data = data;
-    })
-    // this.data = this.route.snapshot.data;
+    // this.http.get(`http://localhost:9092/api/vehicles`)
+    // .subscribe((data:any) => {
+    //   console.log(data);
+    //   this.data = data;
+    // })
+    this.data = this.route.snapshot.data;
 
-    // console.log(this.rdata.garage)
   }
 
 }
