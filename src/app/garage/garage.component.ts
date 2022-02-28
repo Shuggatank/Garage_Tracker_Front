@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-garage',
@@ -7,19 +8,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./garage.component.scss']
 })
 export class GarageComponent implements OnInit {
-  test: any = [1,2,3,4,5,6,]
   data: any;
-  constructor(private http: HttpClient) { }
+
+  // rdata: any;
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles`)
+    this.http.get(`http://localhost:9092/api/vehicles`)
     .subscribe((data:any) => {
       console.log(data);
       this.data = data;
     })
+    // this.data = this.route.snapshot.data;
 
-
+    // console.log(this.rdata.garage)
   }
 
 }
