@@ -26,7 +26,7 @@ export class MaintenanceformComponent implements OnInit {
     description: new FormControl('', [Validators.required]),
   })
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private formBuild: FormBuilder, private ngbCalendar: NgbCalendar, private dateAdapter: NgbDateAdapter<string>, private details: VehicleDetailsComponent) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private formBuild: FormBuilder, private details: VehicleDetailsComponent) { }
 
   ngOnInit(): void {
     this.form = this.formBuild.group  ({
@@ -45,13 +45,11 @@ onSubmit() {
       console.log(data);
       this.details.getData()
     })
-
   })
   this.form = this.formBuild.group ({
     date: new FormControl('', [Validators.required]),
     totalAmount: new FormControl('', [Validators.required]),
     cost: new FormControl('', [Validators.required]),
   })
-
 }
 }
