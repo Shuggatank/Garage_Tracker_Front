@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
+ /**
+  * This Service handles how the date is rendered and parsed from keyboard i.e. in the bound input field.
+  */
+
 @Injectable({
   providedIn: 'root'
 })
