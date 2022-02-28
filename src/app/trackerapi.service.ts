@@ -11,6 +11,10 @@ export class TrackerapiService {
   constructor(private http: HttpClient) { }
 
   createAPIObservable() {
-    return this.http.get(`http://localhost:9092/api/vehicles`)
+    return this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles`)
+  }
+
+  getVehicles(carId: string) {
+    return this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles/${carId}`)
   }
 }
