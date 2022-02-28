@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+//   display: grid;
+//   grid-template-columns: 150px auto 150px;
+//   grid-template-rows: 150px auto 150px;
+}
+.card-group{
+    grid-column: 2;
+    grid-row: 2;
+}
+img { 
+    max-height: 450px;
+}
