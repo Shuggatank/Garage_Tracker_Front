@@ -4,19 +4,21 @@
         <div class="modal-header">
           <form class="oilchange" [formGroup]="form">
               <!-- #postForm="ngForm"> -->
-                {{form.value | json}}
-                <h3>Oil Change</h3>
+                <!-- {{form.value | json}} -->
+                <h3>Add Oil Change</h3>
                 <hr />
                 <!-- <h1>{{date}}</h1> -->
               
-                <div class="mb-2">
+                <div class="mb-2" >
                   <!-- <label for="title" class="form-label">Mileage</label> -->
                   
-                  <input  formControlName="mileage" type="text" class="form-control" id="mileage" placeholder="Mileage">
+                  <input  formControlName="mileage" type="text" class="form-control" id="mileage" placeholder="Mileage" required>
                 </div>
                 <div class="mb-3">
                   <!-- <label for="author" class="form-control">Date</label> -->
-                  <input  formControlName="date" type="text" class="form-control" id="date" placeholder="MM/DD/YYYY" required>
+                  <!-- <input  formControlName="date" type="date" class="form-control"  id="date" placeholder="MM/DD/YYYY" required> -->
+                  <input  formControlName="date" type="text" class="form-control"  id="date" placeholder="MM/DD/YYYY"  ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+                 
                 </div>
                 <div class="mb-3">
                   <!-- <label  for="date" class="form-control">Oil Grade</label> -->
