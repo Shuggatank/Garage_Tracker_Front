@@ -5,7 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-garage',
   templateUrl: './garage.component.html',
-  styleUrls: ['./garage.component.scss']
+  styleUrls: ['./garage.component.scss'],
+  template: `<ng-progress></ng-progress>`
 })
 export class GarageComponent implements OnInit {
   data: any;
