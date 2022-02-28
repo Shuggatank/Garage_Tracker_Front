@@ -2,9 +2,9 @@
 
 <body>
   <!-- <p>The message: {{rdata.message}}</p> -->
-<div class="card-group" >
+<div class="card-group pt-4" >
  
-    <div class="card h-100" *ngFor="let card of data; let i = index"> 
+    <div class="card h-100 m-3 "  *ngFor="let card of data; let i = index"> 
       <a href="vehicle/{{card.id}}">
       <img src="../../assets/img/cars/img_{{card.id}}.jpg" class="card-img-top" alt="...">
       <div class="card-body">
