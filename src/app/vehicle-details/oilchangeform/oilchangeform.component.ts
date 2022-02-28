@@ -26,7 +26,7 @@ export class OilchangeformComponent implements OnInit {
   })
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private formBuild: FormBuilder, private ngbCalendar: NgbCalendar, private dateAdapter: NgbDateAdapter<string>, private details: VehicleDetailsComponent) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private formBuild: FormBuilder, private details: VehicleDetailsComponent) { }
 
   ngOnInit(): void {
 
@@ -36,11 +36,8 @@ export class OilchangeformComponent implements OnInit {
       oilGrade: new FormControl('', [Validators.required]),
       oilFilter: new FormControl('', [Validators.required]),
     })
-
   }
   onSubmit(){
-
-
     console.log(this.form.value)
     const headers = {'content-type': 'application/json'};
     const body = JSON.stringify(this.form.value)
@@ -50,10 +47,7 @@ export class OilchangeformComponent implements OnInit {
         console.log(data);
         this.details.getData()
       })
-
-    })
-    
-    
+    }) 
     this.form = this.formBuild.group ({
       mileage: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
