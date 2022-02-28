@@ -1,6 +1,6 @@
 <body>
 <section class="info">
-  {{vehicle.id}}
+  <!-- {{vehicle.id}}
   {{vehicle.make}}
   {{vehicle.model}}
   {{vehicle.vin}}
@@ -12,8 +12,28 @@
   <p>{{results.Results[7].Variable}}: {{results.Results[7].Value}}</p>
   <p>{{results.Results[8].Variable}}: {{results.Results[8].Value}}</p>
   <p>{{results.Results[9].Variable}}: {{results.Results[9].Value}}</p>
-  <p>{{results.Results[21].Variable}}: {{results.Results[21].Value}}</p>
-
+  <p>{{results.Results[21].Variable}}: {{results.Results[21].Value}}</p> -->
+  <div class="card mb-3 mx-auto m-4 pb-5 shadow p-4" style="max-width: 75%;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../../assets/img/cars/img_{{vehicle.id}}.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">{{vehicle.make}} {{vehicle.model}}</h4>
+          <p class="card-text">  
+          <p>{{results.SearchCriteria}}</p>
+          <p>Make: {{results.Results[6].Value}}</p>
+          <p>{{results.Results[7].Variable}}: {{results.Results[7].Value}}</p>
+          <p>{{results.Results[8].Variable}}: {{results.Results[8].Value}}</p>
+          <p>{{results.Results[9].Variable}}: {{results.Results[9].Value}}</p>
+          <p>{{results.Results[21].Variable}}: {{results.Results[21].Value}}</p>
+        
+          <p class="card-text"><small class="text-muted"></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
