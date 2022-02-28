@@ -4,64 +4,18 @@ import { HttpClient } from '@angular/common/http';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { VehicleDetailsComponent } from '../vehicle-details.component';
+import { CustomadapterService } from '../customadapter.service';
+import { CustomDateParserService } from '../custom-date-parser.service';
 
-/**
- * This Service handles how the date is represented in scripts i.e. ngModel.
- */
- @Injectable()
- export class CustomAdapter extends NgbDateAdapter<string> {
- 
-   readonly DELIMITER = '/';
- 
-   fromModel(value: string | null): NgbDateStruct | null {
-     if (value) {
-       const date = value.split(this.DELIMITER);
-       return {
-         month : parseInt(date[0], 10),
-         day : parseInt(date[1], 10),
-         year : parseInt(date[2], 10)
-       };
-     }
-     return null;
-   }
- 
-   toModel(date: NgbDateStruct | null): string | null {
-     return date ? date.month  + this.DELIMITER + date.day + this.DELIMITER + date.year : null;
-   }
- }
- 
- /**
-  * This Service handles how the date is rendered and parsed from keyboard i.e. in the bound input field.
-  */
- @Injectable()
- export class CustomDateParserFormatter extends NgbDateParserFormatter {
- 
-   readonly DELIMITER = '/';
- 
-   parse(value: string): NgbDateStruct | null {
-     if (value) {
-       const date = value.split(this.DELIMITER);
-       return {
-         month : parseInt(date[0], 10),
-         day : parseInt(date[1], 10),
-         year : parseInt(date[2], 10)
-       };
-     }
-     return null;
-   }
- 
-   format(date: NgbDateStruct | null): string {
-     return date ? date.month + this.DELIMITER + date.day + this.DELIMITER + date.year : '';
-   }
- }
+
 
 @Component({
   selector: 'app-maintenanceform',
   templateUrl: './maintenanceform.component.html',
   styleUrls: ['./maintenanceform.component.scss'],
   providers: [
-    {provide: NgbDateAdapter, useClass: CustomAdapter},
-    {provide: NgbDateParserFormatter, useClass: CustomDateParserFormatter}
+    {provide: NgbDateAdapter, useClass: CustomadapterService},
+    {provide: NgbDateParserFormatter, useClass: CustomDateParserService}
   ]
 })
 export class MaintenanceformComponent implements OnInit {
