@@ -3,11 +3,17 @@
   {{vehicle.id}}
   {{vehicle.make}}
   {{vehicle.model}}
-  {{vehicle.cin}}
+  {{vehicle.vin}}
   {{vehicle.year}}
-<ul *ngFor="let oilChange of vehicle.gasFillList; let i = index">
-  {{oilChange.date}}
-</ul>
+
+  <p>{{results.SearchCriteria}}</p>
+  <p>{{results.Results[0].Variable}}</p>
+  <p>Make: {{results.Results[6].Value}}</p>
+  <p>{{results.Results[7].Variable}}: {{results.Results[7].Value}}</p>
+  <p>{{results.Results[8].Variable}}: {{results.Results[8].Value}}</p>
+  <p>{{results.Results[9].Variable}}: {{results.Results[9].Value}}</p>
+  <p>{{results.Results[21].Variable}}: {{results.Results[21].Value}}</p>
+
 </section>
 
 
@@ -44,7 +50,7 @@
            <small>{{gasFill.date}}</small>
          </div>
          <p class="mb-1">Gallons Filled: {{gasFill.totalAmount}}<br>Cost per gallon: ${{gasFill.cost}}</p>
-         <small>Total Cost: {{gasFill.totalAmount * gasFill.cost}}</small>
+         <small>Total Cost: ${{gasFill.totalAmount * gasFill.cost}}</small>
      </a>
    </div>
   </div>
