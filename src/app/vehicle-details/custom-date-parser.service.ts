@@ -3,6 +3,7 @@ import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } fr
 
  /**
   * This Service handles how the date is rendered and parsed from keyboard i.e. in the bound input field.
+  * https://ng-bootstrap.github.io/#/components/datepicker/examples#adapter
   */
 
 @Injectable({
