@@ -4,7 +4,8 @@
   <!-- <p>The message: {{rdata.message}}</p> -->
 <div class="card-group pt-4" >
  
-    <div class="card h-100 m-2 "  *ngFor="let card of data; let i = index"> 
+    <div class="card h-100 m-2 border border-0 "  *ngFor="let card of data; let i = index"> 
+      
       <a href="vehicle/{{card.id}}">
       <img src="../../assets/img/cars/img_{{card.id}}.jpg" class="card-img-top" alt="...">
       <div class="card-body">
@@ -15,6 +16,7 @@
         <small class="text-muted">{{card.vin}}</small>
       </div>
       </a>
+      
     </div>
   
 </div>
