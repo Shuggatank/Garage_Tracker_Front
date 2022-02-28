@@ -51,18 +51,22 @@
 </ul>
 <div class="tab-content" id="myTabContent" >
   <div class="tab-pane fade show active" id="oil" role="tabpanel" aria-labelledby="oil-tab">
+    <app-oilchangeform></app-oilchangeform>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#oilChangeModal"> Add Oil Change Record </button>
     <div class="list-group" *ngFor="let oilChange of vehicle.oilChangeList; let i = index">
      <a class="list-group-item list-group-item-action" aria-current="true">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">Mileage: {{oilChange.mileage}}</h5>
           <small>{{oilChange.date}}</small>
         </div>
-        <p class="mb-1">Oil Grade: {{oilChange.oilGrade}}</p>
-        <small>And some small print.</small>
+        <p class="mb-1">Oil Grade: {{oilChange.oilGrade}}<br>Oil Filter: {{oilChange.oilFilter}}</p>
+        <small></small>
     </a>
   </div>
 </div>
   <div class="tab-pane fade" id="gas" role="tabpanel" aria-labelledby="gas-tab">
+    <app-gasfillform></app-gasfillform>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#gasFillModal"> Add Gas Fill Record </button>
     <div class="list-group" *ngFor="let gasFill of vehicle.gasFillList; let i = index">
       <a class="list-group-item list-group-item-action" aria-current="true">
          <div class="d-flex w-100 justify-content-between">
@@ -75,6 +79,8 @@
    </div>
   </div>
   <div class="tab-pane fade" id="maintenance" role="tabpanel" aria-labelledby="maintenance-tab">
+  <app-maintenanceform></app-maintenanceform>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#maintenanceModal"> Add Maintenance Record </button>
     <div class="list-group" *ngFor="let maintenance of vehicle.maintenanceRecordList; let i = index">
       <a class="list-group-item list-group-item-action" aria-current="true">
          <div class="d-flex w-100 justify-content-between">
@@ -89,3 +95,5 @@
 </div>
 </section>
 </body>
+<router-outlet></router-outlet>
+
