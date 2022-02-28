@@ -33,8 +33,8 @@ export class GasfillformComponent implements OnInit {
       totalAmount: new FormControl('', [Validators.required]),
       cost: new FormControl('', [Validators.required]),
     })
-
   }
+
 onSubmit() {
   console.log(this.form.value)
   const headers = {'content-type': 'application/json'};
@@ -45,13 +45,11 @@ onSubmit() {
       console.log(data);
       this.details.getData()
     })
-
   })
   this.form = this.formBuild.group ({
     date: new FormControl('', [Validators.required]),
     totalAmount: new FormControl('', [Validators.required]),
     cost: new FormControl('', [Validators.required]),
   })
-
 }
 }
