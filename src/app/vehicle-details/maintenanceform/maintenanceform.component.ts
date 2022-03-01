@@ -1,8 +1,8 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { VehicleDetailsComponent } from '../vehicle-details.component';
 import { CustomadapterService } from '../customadapter.service';
 import { CustomDateParserService } from '../custom-date-parser.service';
@@ -36,16 +36,16 @@ export class MaintenanceformComponent implements OnInit {
     })
   }
 onSubmit() {
-  console.log(this.form.value)
   const headers = {'content-type': 'application/json'};
   const body = JSON.stringify(this.form.value)
   this.route.paramMap.subscribe(params =>{
     let paramId: string = params.get('id') || 'error';
-    this.http.post<any>(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}/maintenance`, body, {'headers': headers}).subscribe(data => {
-      console.log(data);
+    this.http.post<any>(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}/maintenance`, body, {'headers': headers}).subscribe(() => {
+      // Calls getData in vehicle-details to refresh the list on submit.
       this.details.getData()
     })
   })
+  // Reset form after submit
   this.form = this.formBuild.group ({
     date: new FormControl('', [Validators.required]),
     totalAmount: new FormControl('', [Validators.required]),
