@@ -1,0 +1,8 @@
+As a user I would like to add vehicles
+As a user I would like to log my oil changes
+As a user I would like to log my gas fills
+As a user I would like to log any maintenance done
+As a user I would each record to be associated with a vehicle
+As a user I would like a way to see all the records of a particular type
+As a user I would like to add vehicle by VIN
+As a user I would like to create an account
