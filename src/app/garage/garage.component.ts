@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,18 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 export class GarageComponent implements OnInit {
   data: any;
 
-  // rdata: any;
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-    // this.http.get(`http://localhost:9092/api/vehicles`)
-    // .subscribe((data:any) => {
-    //   console.log(data);
-    //   this.data = data;
-    // })
+    // Loads in garage data from the resolver
     this.data = this.route.snapshot.data;
-
   }
-
 }
