@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TrackerapiService } from '../trackerapi.service';
 
 @Component({
   selector: 'app-vehicle-details',
@@ -23,20 +22,17 @@ export class VehicleDetailsComponent implements OnInit {
 
   getData() {
     this.route.paramMap.subscribe(params =>{
+      // Gets the vehicle id
       let paramId: string = params.get('id') || 'error';
-
       this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles/${paramId}`).subscribe(response => {
-        console.log(response)
         this.vehicle = response;
 
-
+        // Takes the vin from the vehicle object and searches the VIN database
         this.http.get(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${this.vehicle.vin}?format=json`)
         .subscribe(data => {
           this.results = data;
         })
-
       })
     })
   }
-
 }
