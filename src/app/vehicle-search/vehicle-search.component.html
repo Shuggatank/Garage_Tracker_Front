@@ -27,7 +27,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success" (click)="AddVehicle()" data-bs-dismiss="modal">Add Vehicle</button>
+          <button type="button" class="btn btn-success" (click)="AddVehicle()" data-bs-dismiss="modal" [disabled]="!form.valid">Add Vehicle</button>
         </div>
       </div>
     </div>
