@@ -13,8 +13,4 @@ export class TrackerapiService {
   createAPIObservable() {
     return this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles`)
   }
-
-  getVehicles(carId: string) {
-    return this.http.get(`https://garage-tracker.herokuapp.com/api/vehicles/${carId}`)
-  }
 }
