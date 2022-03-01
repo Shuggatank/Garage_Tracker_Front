@@ -1,24 +1,16 @@
-
-
 <body>
-  <!-- <p>The message: {{rdata.message}}</p> -->
-<div class="card-group pt-4" >
- 
-    <div class="card h-100 m-2 border border-0 "  *ngFor="let card of data.garage; let i = index"> 
-      
-      <a href="vehicle/{{card.id}}">
-      <img src="../../assets/img/cars/img_{{card.id}}.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{card.make}}</h5>
-        <p class="card-text">{{card.year}}   {{card.model}}</p>
+  <div class="card-group pt-4" >
+      <div class="card h-100 m-2 border border-0 "  *ngFor="let card of data.garage; let i = index"> 
+        <a href="vehicle/{{card.id}}">
+        <img src="../../assets/img/cars/img_{{card.id}}.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{card.make}}</h5>
+          <p class="card-text">{{card.year}}   {{card.model}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{card.vin}}</small>
+        </div>
+        </a>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">{{card.vin}}</small>
-      </div>
-      </a>
-      
-    </div>
-  
-</div>
-
+  </div>
 </body>
