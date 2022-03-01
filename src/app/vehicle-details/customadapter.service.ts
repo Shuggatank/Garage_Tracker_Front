@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateAdapter,  NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 
 /**
@@ -12,10 +12,9 @@ import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } fr
 })
 export class CustomadapterService extends NgbDateAdapter<string>  {
 
-  // constructor() { }
 
   readonly DELIMITER = '/';
- 
+  // MM/DD/YYYY format
   fromModel(value: string | null): NgbDateStruct | null {
     if (value) {
       const date = value.split(this.DELIMITER);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
  /**
   * This Service handles how the date is rendered and parsed from keyboard i.e. in the bound input field.
@@ -11,9 +11,9 @@ import { NgbCalendar, NgbDateAdapter, NgbDateParserFormatter, NgbDateStruct } fr
 })
 export class CustomDateParserService extends NgbDateParserFormatter {
 
-  // constructor() { }
+
   readonly DELIMITER = '/';
- 
+  // MM/DD/YYYY format
    parse(value: string): NgbDateStruct | null {
      if (value) {
        const date = value.split(this.DELIMITER);
