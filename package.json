@@ -28,6 +28,7 @@
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.1.3",
     "express": "^4.17.3",
+    "ng-angular-popup": "^0.0.8",
     "ngx-progressbar": "^8.0.0",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
