@@ -16,6 +16,7 @@
 
 
 Garage Tracker lets you keep track of all the work done on your vehicle. Search by VIN to get the most accurate information and add it to 
+your garage. Keep track of each individual vehicles record with a quick and easy form system. 
 ### The Approach
 I started with a wireframe of the site. This gave me a rough idea of how I wanted the site to look like and how the functionality would be presented to the user.
 I knew I wanted to use Bootstrap, so I install that from the start. I created a new angular project and started with the navbar component.
