@@ -1,27 +1,24 @@
 <div class="modal fade" id="maintenanceModal" tabindex="-1" aria-labelledby="createPostModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <form class="maintenance"  [formGroup]="form">
-              <!-- #postForm="ngForm"> -->
-                <!-- {{form.value | json}} -->
-                <h3>Maintenance Record</h3>
-                <hr />
-                <div class="mb-2">
-                 
-                  <input  formControlName="date" type="text" class="form-control"  id="date" placeholder="MM/DD/YYYY"  ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
-                </div>
-                <div class="mb-3">
-                  <input  formControlName="cost" type="number" class="form-control" id="cost" placeholder="Cost">
-                </div>
-                <div class="mb-3">
-                  <textarea  formControlName="description" type="text" class="form-control" id="description" placeholder="Description"></textarea>
-                </div>
-              <!-- button is disabled until form is valid-->
-              <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal" [disabled]="!form.valid">Submit</button>
-              <!-- when button is click it submits its new object -->
-              
-              </form>
-            </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form class="maintenance mx-auto"  [formGroup]="form">
+          <h3>Maintenance Record</h3>
+          <hr/>
+          <div class="mb-2">
+            <input  formControlName="date" type="text" class="form-control"  id="date" placeholder="MM/DD/YYYY"  ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
           </div>
-        </div>    
+          <div class="mb-3">
+            <input  formControlName="cost" type="number" class="form-control" id="cost" placeholder="Cost">
+          </div>
+          <div class="mb-3">
+            <textarea  formControlName="description" type="text" class="form-control" id="description" placeholder="Description"></textarea>
+          </div>
+          <!-- button is disabled until form is valid-->
+          <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal" [disabled]="!form.valid">Submit</button>
+          <!-- when button is click it submits its new object -->
+        </form>
+      </div>
+    </div>
+  </div> 
+</div>   

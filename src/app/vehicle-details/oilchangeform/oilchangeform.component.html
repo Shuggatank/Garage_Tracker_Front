@@ -1,31 +1,27 @@
 <div class="modal fade" id="oilChangeModal" tabindex="-1" aria-labelledby="createPostModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <form class="oilchange mx-auto" [formGroup]="form">
-              <!-- #postForm="ngForm"> -->
-                <!-- {{form.value | json}} -->
-                <h3>Add Oil Change</h3>
-                <hr />
-                <div class="mb-2" >
-                  <input  formControlName="mileage" type="number" class="form-control" id="mileage" placeholder="Mileage"  required>
-                </div>
-                <div class="mb-3">
-                  <input  formControlName="date" type="text" class="form-control"  id="date" placeholder="MM/DD/YYYY"  ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
-
-                </div>
-                <div class="mb-3">
-                  <input  formControlName="oilGrade" type="text" class="form-control" id="oilGrade" placeholder="Oil Grade">
-                  <!-- <input ngModel name="date" type="" class="form-control" id="date" placeholder="06/19/1865"> -->
-                </div>
-                <div class="mb-3">
-                  <input  formControlName="oilFilter" type="text" class="form-control" id="oilFilter" placeholder="Oil Filter">
-                </div>
-                <!-- button is disabled until form is valid-->
-              <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal" [disabled]="!form.valid">Submit</button>
-              <!-- when button is click it submits its new object -->     
-          </form>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <form class="oilchange mx-auto" [formGroup]="form">
+          <h3>Add Oil Change</h3>
+          <hr />
+          <div class="mb-2" >
+            <input  formControlName="mileage" type="number" class="form-control" id="mileage" placeholder="Mileage"  required>
+          </div>
+          <div class="mb-3">
+            <input  formControlName="date" type="text" class="form-control"  id="date" placeholder="MM/DD/YYYY"  ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+          </div>
+          <div class="mb-3">
+            <input  formControlName="oilGrade" type="text" class="form-control" id="oilGrade" placeholder="Oil Grade">
+          </div>
+          <div class="mb-3">
+            <input  formControlName="oilFilter" type="text" class="form-control" id="oilFilter" placeholder="Oil Filter">
+          </div>
+          <!-- button is disabled until form is valid-->
+          <button  type="button" class="btn btn-primary"  (click)="onSubmit()" data-bs-dismiss="modal" [disabled]="!form.valid">Submit</button>
+          <!-- when button is click it submits its new object -->     
+        </form>
       </div>
-    </div>    
+    </div>
+  </div>    
 </div>
