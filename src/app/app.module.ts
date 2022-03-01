@@ -20,6 +20,7 @@ import { OilchangeformComponent } from './vehicle-details/oilchangeform/oilchang
 import { GasfillformComponent } from './vehicle-details/gasfillform/gasfillform.component';
 import { MaintenanceformComponent } from './vehicle-details/maintenanceform/maintenanceform.component';
 import { SearchToastComponent } from './vehicle-search/search-toast/search-toast.component';
+import { NgToastModule } from 'ng-angular-popup';
 
 
 
@@ -46,7 +47,8 @@ import { SearchToastComponent } from './vehicle-search/search-toast/search-toast
     ReactiveFormsModule,
     NgProgressModule,
     NgProgressHttpModule,
-    NgProgressRouterModule
+    NgProgressRouterModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
